@@ -1,0 +1,80 @@
+﻿@model IPagedList<Client>
+
+<div id="clientList">
+    <div class="pagedList" data-corp-target="#clientList">
+        @Html.PagedListPager(Model, page => Url.Action("Search", new { page, currentFilter = ViewBag.CurrentFilter }),
+        PagedListRenderOptions.ClassicPlusFirstAndLast)
+    </div>
+    <table class="table">
+        <tr>
+            <th>Title
+            </th>
+            <th>Initials
+            </th>
+            <th>Name
+            </th>
+            <th>Salutation
+            </th>
+            <th>Address
+            </th>
+            <th>Address1
+            </th>
+            <th>Address2
+            </th>
+            <th>Address3
+            </th>
+            <th>Postal Code
+            </th>
+            <th>Contact
+            </th>
+            <th>Cancelled
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Initials)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salutation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address3)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostalCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contact)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cancelled)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ClientNo }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ClientNo }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ClientNo })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

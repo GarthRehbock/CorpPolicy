@@ -1,0 +1,19 @@
+﻿@model IPagedList<Client>
+
+@{
+    ViewBag.Title = "Client List";
+}
+
+<h2>Clients</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<form method="get" action="@Url.Action("Search")"
+    data-corp-ajax="true" data-corp-target="#clientList">
+    <input type="search" name="searchString" data-corp-autocomplete="@Url.Action("AutoComplete")" />
+    <input type="submit" value="Search by Name" />
+</form>
+
+@Html.Partial("_ClientList", Model)

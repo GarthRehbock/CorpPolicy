@@ -1,0 +1,176 @@
+﻿@model CorpPolicy.Models.Policy
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Policy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cancelled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cancelled)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InceptionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InceptionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnnivMonth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnnivMonth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RenewalDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RenewalDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CancellationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CancellationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Frequeny)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Frequeny)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Insured)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Insured)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdminFee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdminFee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BrokerFee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BrokerFee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Created)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Created)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Changed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Changed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChangedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChangedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Client.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Insurer.InsurerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Insurer.InsurerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyType.PolicyTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyType.PolicyTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyBank.AccountName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyBank.AccountName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

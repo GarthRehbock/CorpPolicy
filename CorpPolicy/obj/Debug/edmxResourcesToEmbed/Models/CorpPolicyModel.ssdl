@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CorpPolicyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AccountType">
+    <Key>
+      <PropertyRef Name="AccountTypeID" />
+    </Key>
+    <Property Name="AccountTypeID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountTypeName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Created" Type="smalldatetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Changed" Type="smalldatetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bank">
+    <Key>
+      <PropertyRef Name="BankID" />
+    </Key>
+    <Property Name="BankID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BankName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Created" Type="smalldatetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Changed" Type="smalldatetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Broker">
+    <Key>
+      <PropertyRef Name="BrokerID" />
+    </Key>
+    <Property Name="BrokerID" Type="tinyint" Nullable="false" />
+    <Property Name="BrokerName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FSPLicence" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CompRegNo" Type="varchar" MaxLength="15" />
+    <Property Name="Address" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Address1" Type="varchar" MaxLength="30" />
+    <Property Name="Address2" Type="varchar" MaxLength="30" />
+    <Property Name="Address3" Type="varchar" MaxLength="30" />
+    <Property Name="PCode" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="RegVat" Type="bit" Nullable="false" />
+    <Property Name="VATNumber" Type="varchar" MaxLength="15" />
+    <Property Name="Telephone" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="FAX" Type="varchar" MaxLength="15" />
+    <Property Name="WorkDir" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Created" Type="smalldatetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Changed" Type="smalldatetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ClientNo" />
+    </Key>
+    <Property Name="ClientNo" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="Initials" Type="varchar" MaxLength="5" />
+    <Property Name="Title" Type="varchar" MaxLength="15" />
+    <Property Name="Salutation" Type="varchar" MaxLength="30" />
+    <Property Name="VatNo" Type="varchar" MaxLength="10" />
+    <Property Name="Address" Type="varchar" MaxLength="30" />
+    <Property Name="Address1" Type="varchar" MaxLength="30" />
+    <Property Name="Address2" Type="varchar" MaxLength="30" />
+    <Property Name="Address3" Type="varchar" MaxLength="30" />
+    <Property Name="PostalCode" Type="varchar" MaxLength="4" />
+    <Property Name="BirthDate" Type="date" />
+    <Property Name="Language" Type="char" MaxLength="1" />
+    <Property Name="IdentityNo" Type="varchar" MaxLength="30" />
+    <Property Name="BusinessPhone" Type="varchar" MaxLength="15" />
+    <Property Name="HomePhone" Type="varchar" MaxLength="15" />
+    <Property Name="Fax" Type="varchar" MaxLength="15" />
+    <Property Name="CellPhone" Type="varchar" MaxLength="15" />
+    <Property Name="Contact" Type="varchar" MaxLength="30" />
+    <Property Name="Referral" Type="varchar" MaxLength="30" />
+    <Property Name="MarriedFlag" Type="bit" />
+    <Property Name="GroupFlag" Type="bit" />
+    <Property Name="VIPFlag" Type="bit" />
+    <Property Name="LifeClient" Type="bit" />
+    <Property Name="PrintFlag" Type="bit" />
+    <Property Name="Cancelled" Type="bit" Nullable="false" />
+    <Property Name="CancelledDate" Type="date" />
+    <Property Name="Status" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Created" Type="smalldatetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Changed" Type="smalldatetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HttpRequestLogs">
+    <Key>
+      <PropertyRef Name="HttpRequestLogID" />
+    </Key>
+    <Property Name="HttpRequestLogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Method" Type="nvarchar(max)" />
+    <Property Name="Uri" Type="nvarchar(max)" />
+    <Property Name="Data" Type="nvarchar(max)" />
+    <Property Name="Status" Type="nvarchar(max)" />
+    <Property Name="CreatedBy" Type="nvarchar(max)" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="nvarchar(max)" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Insurer">
+    <Key>
+      <PropertyRef Name="InsurerID" />
+    </Key>
+    <Property Name="InsurerID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InsurerName" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Created" Type="smalldatetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Changed" Type="smalldatetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mask">
+    <Key>
+      <PropertyRef Name="MaskID" />
+    </Key>
+    <Property Name="MaskID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaskName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="MaskText" Type="varchar(max)" />
+    <Property Name="Status" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Created" Type="smalldatetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Changed" Type="smalldatetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Policy">
+    <Key>
+      <PropertyRef Name="PolicyID" />
+    </Key>
+    <Property Name="PolicyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PolicyNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ClientNo" Type="int" Nullable="false" />
+    <Property Name="InsurerID" Type="smallint" Nullable="false" />
+    <Property Name="PolicyTypeID" Type="tinyint" Nullable="false" />
+    <Property Name="Cancelled" Type="bit" Nullable="false" />
+    <Property Name="InceptionDate" Type="date" Nullable="false" />
+    <Property Name="AnnivMonth" Type="tinyint" Nullable="false" />
+    <Property Name="RenewalDate" Type="date" Nullable="false" />
+    <Property Name="CancellationDate" Type="date" />
+    <Property Name="Frequeny" Type="tinyint" Nullable="false" />
+    <Property Name="Insured" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="AdminFee" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="BrokerFee" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Created" Type="smalldatetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Changed" Type="smalldatetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PolicyBank">
+    <Key>
+      <PropertyRef Name="PolicyID" />
+    </Key>
+    <Property Name="PolicyID" Type="int" Nullable="false" />
+    <Property Name="DebitOrder" Type="bit" Nullable="false" />
+    <Property Name="AccountName" Type="varchar" MaxLength="20" />
+    <Property Name="AccountTypeID" Type="tinyint" />
+    <Property Name="BankID" Type="tinyint" />
+    <Property Name="BranchNumber" Type="varchar" MaxLength="8" />
+    <Property Name="AccountNumber" Type="varchar" MaxLength="20" />
+    <Property Name="Status" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Created" Type="smalldatetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Changed" Type="smalldatetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PolicyDebit">
+    <Key>
+      <PropertyRef Name="DebitID" />
+    </Key>
+    <Property Name="DebitID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PolicyID" Type="int" Nullable="false" />
+    <Property Name="InsurerID" Type="smallint" Nullable="false" />
+    <Property Name="DebitReason" Type="tinyint" Nullable="false" />
+    <Property Name="EffectiveDate" Type="date" Nullable="false" />
+    <Property Name="ACBDate" Type="date" />
+    <Property Name="BookDate" Type="date" Nullable="false" />
+    <Property Name="CreatedDate" Type="date" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="126" Nullable="false" />
+    <Property Name="BrokerFee" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="AdminFee" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PolicyDebitRisk">
+    <Key>
+      <PropertyRef Name="DebitRiskID" />
+    </Key>
+    <Property Name="DebitRiskID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DebitID" Type="int" Nullable="false" />
+    <Property Name="RiskID" Type="int" Nullable="false" />
+    <Property Name="RiskReason" Type="tinyint" Nullable="false" />
+    <Property Name="Premium" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="Commission" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Created" Type="smalldatetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Changed" Type="smalldatetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PolicyRisk">
+    <Key>
+      <PropertyRef Name="PolicyRiskID" />
+    </Key>
+    <Property Name="PolicyRiskID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PolicyID" Type="int" Nullable="false" />
+    <Property Name="RiskTypeID" Type="smallint" Nullable="false" />
+    <Property Name="Insured" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="Premium" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="Cancelled" Type="bit" Nullable="false" />
+    <Property Name="CancelledDate" Type="date" />
+    <Property Name="Description" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="LongDescription" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PolicyType">
+    <Key>
+      <PropertyRef Name="PolicyTypeID" />
+    </Key>
+    <Property Name="PolicyTypeID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PolicyTypeName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PolicyTypeNameAfr" Type="varchar" MaxLength="20" />
+    <Property Name="BusinessType" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Created" Type="smalldatetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Changed" Type="smalldatetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RiskType">
+    <Key>
+      <PropertyRef Name="RiskTypeID" />
+    </Key>
+    <Property Name="RiskTypeID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RiskTypeNo" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="31" Nullable="false" />
+    <Property Name="CommissionPerc" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Created" Type="smalldatetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Changed" Type="smalldatetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VATData">
+    <Key>
+      <PropertyRef Name="VATID" />
+    </Key>
+    <Property Name="VATID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Percentage" Type="numeric" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="EffectiveDate" Type="date" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Created" Type="smalldatetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Changed" Type="smalldatetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Policy_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="Policy" Type="Self.Policy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientNo" />
+      </Principal>
+      <Dependent Role="Policy">
+        <PropertyRef Name="ClientNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Policy_Insurer">
+    <End Role="Insurer" Type="Self.Insurer" Multiplicity="1" />
+    <End Role="Policy" Type="Self.Policy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Insurer">
+        <PropertyRef Name="InsurerID" />
+      </Principal>
+      <Dependent Role="Policy">
+        <PropertyRef Name="InsurerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Policy_PolicyType">
+    <End Role="PolicyType" Type="Self.PolicyType" Multiplicity="1" />
+    <End Role="Policy" Type="Self.Policy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PolicyType">
+        <PropertyRef Name="PolicyTypeID" />
+      </Principal>
+      <Dependent Role="Policy">
+        <PropertyRef Name="PolicyTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PolicyBank_AccountType">
+    <End Role="AccountType" Type="Self.AccountType" Multiplicity="0..1" />
+    <End Role="PolicyBank" Type="Self.PolicyBank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountType">
+        <PropertyRef Name="AccountTypeID" />
+      </Principal>
+      <Dependent Role="PolicyBank">
+        <PropertyRef Name="AccountTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PolicyBank_Bank">
+    <End Role="Bank" Type="Self.Bank" Multiplicity="0..1" />
+    <End Role="PolicyBank" Type="Self.PolicyBank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bank">
+        <PropertyRef Name="BankID" />
+      </Principal>
+      <Dependent Role="PolicyBank">
+        <PropertyRef Name="BankID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PolicyBank_Policy">
+    <End Role="Policy" Type="Self.Policy" Multiplicity="1" />
+    <End Role="PolicyBank" Type="Self.PolicyBank" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Policy">
+        <PropertyRef Name="PolicyID" />
+      </Principal>
+      <Dependent Role="PolicyBank">
+        <PropertyRef Name="PolicyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PolicyDebit_Insurer">
+    <End Role="Insurer" Type="Self.Insurer" Multiplicity="1" />
+    <End Role="PolicyDebit" Type="Self.PolicyDebit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Insurer">
+        <PropertyRef Name="InsurerID" />
+      </Principal>
+      <Dependent Role="PolicyDebit">
+        <PropertyRef Name="InsurerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PolicyDebit_Policy">
+    <End Role="Policy" Type="Self.Policy" Multiplicity="1" />
+    <End Role="PolicyDebit" Type="Self.PolicyDebit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policy">
+        <PropertyRef Name="PolicyID" />
+      </Principal>
+      <Dependent Role="PolicyDebit">
+        <PropertyRef Name="PolicyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PolicyDebitRisk_PolicyDebit">
+    <End Role="PolicyDebit" Type="Self.PolicyDebit" Multiplicity="1" />
+    <End Role="PolicyDebitRisk" Type="Self.PolicyDebitRisk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PolicyDebit">
+        <PropertyRef Name="DebitID" />
+      </Principal>
+      <Dependent Role="PolicyDebitRisk">
+        <PropertyRef Name="DebitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PolicyRisk_Policy">
+    <End Role="Policy" Type="Self.Policy" Multiplicity="1" />
+    <End Role="PolicyRisk" Type="Self.PolicyRisk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Policy">
+        <PropertyRef Name="PolicyID" />
+      </Principal>
+      <Dependent Role="PolicyRisk">
+        <PropertyRef Name="PolicyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PolicyRisk_RiskType">
+    <End Role="RiskType" Type="Self.RiskType" Multiplicity="1" />
+    <End Role="PolicyRisk" Type="Self.PolicyRisk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RiskType">
+        <PropertyRef Name="RiskTypeID" />
+      </Principal>
+      <Dependent Role="PolicyRisk">
+        <PropertyRef Name="RiskTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CorpPolicyModelStoreContainer">
+    <EntitySet Name="AccountType" EntityType="Self.AccountType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bank" EntityType="Self.Bank" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Broker" EntityType="Self.Broker" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HttpRequestLogs" EntityType="Self.HttpRequestLogs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Insurer" EntityType="Self.Insurer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mask" EntityType="Self.Mask" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Policy" EntityType="Self.Policy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PolicyBank" EntityType="Self.PolicyBank" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PolicyDebit" EntityType="Self.PolicyDebit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PolicyDebitRisk" EntityType="Self.PolicyDebitRisk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PolicyRisk" EntityType="Self.PolicyRisk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PolicyType" EntityType="Self.PolicyType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RiskType" EntityType="Self.RiskType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VATData" EntityType="Self.VATData" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Policy_Client" Association="Self.FK_Policy_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Policy" EntitySet="Policy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Policy_Insurer" Association="Self.FK_Policy_Insurer">
+      <End Role="Insurer" EntitySet="Insurer" />
+      <End Role="Policy" EntitySet="Policy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Policy_PolicyType" Association="Self.FK_Policy_PolicyType">
+      <End Role="PolicyType" EntitySet="PolicyType" />
+      <End Role="Policy" EntitySet="Policy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyBank_AccountType" Association="Self.FK_PolicyBank_AccountType">
+      <End Role="AccountType" EntitySet="AccountType" />
+      <End Role="PolicyBank" EntitySet="PolicyBank" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyBank_Bank" Association="Self.FK_PolicyBank_Bank">
+      <End Role="Bank" EntitySet="Bank" />
+      <End Role="PolicyBank" EntitySet="PolicyBank" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyBank_Policy" Association="Self.FK_PolicyBank_Policy">
+      <End Role="Policy" EntitySet="Policy" />
+      <End Role="PolicyBank" EntitySet="PolicyBank" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyDebit_Insurer" Association="Self.FK_PolicyDebit_Insurer">
+      <End Role="Insurer" EntitySet="Insurer" />
+      <End Role="PolicyDebit" EntitySet="PolicyDebit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyDebit_Policy" Association="Self.FK_PolicyDebit_Policy">
+      <End Role="Policy" EntitySet="Policy" />
+      <End Role="PolicyDebit" EntitySet="PolicyDebit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyDebitRisk_PolicyDebit" Association="Self.FK_PolicyDebitRisk_PolicyDebit">
+      <End Role="PolicyDebit" EntitySet="PolicyDebit" />
+      <End Role="PolicyDebitRisk" EntitySet="PolicyDebitRisk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyRisk_Policy" Association="Self.FK_PolicyRisk_Policy">
+      <End Role="Policy" EntitySet="Policy" />
+      <End Role="PolicyRisk" EntitySet="PolicyRisk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyRisk_RiskType" Association="Self.FK_PolicyRisk_RiskType">
+      <End Role="RiskType" EntitySet="RiskType" />
+      <End Role="PolicyRisk" EntitySet="PolicyRisk" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

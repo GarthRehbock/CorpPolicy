@@ -1,0 +1,20 @@
+﻿@model IPagedList<Policy>
+
+@{
+    ViewBag.Title = "Policy List";
+}
+
+<h2>Policies</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<form method="get" action="@Url.Action("Search")"
+    data-corp-ajax="true" data-corp-target="#policyList">
+    <input type="search" name="searchString" data-corp-autocomplete="@Url.Action("AutoComplete")" />
+    <input type="submit" value="Search by Policy Number" />
+    Include cancelled <input type="checkbox" name="includeCancelled" />
+</form>
+
+@Html.Partial("_PolicyList", Model)

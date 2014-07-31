@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fecc79684b264f1f8b16ee773645e795" Name="Diagram1">
+        <EntityTypeShape EntityType="CorpPolicyModel.AccountType" Width="1.5" PointX="3" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CorpPolicyModel.Bank" Width="1.5" PointX="3" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CorpPolicyModel.Broker" Width="1.5" PointX="5.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CorpPolicyModel.Client" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CorpPolicyModel.HttpRequestLog" Width="1.5" PointX="7.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CorpPolicyModel.Insurer" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CorpPolicyModel.Mask" Width="1.5" PointX="9.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CorpPolicyModel.Policy" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CorpPolicyModel.PolicyBank" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CorpPolicyModel.PolicyDebit" Width="1.5" PointX="8.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CorpPolicyModel.PolicyDebitRisk" Width="1.5" PointX="10.5" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CorpPolicyModel.PolicyRisk" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CorpPolicyModel.PolicyType" Width="1.5" PointX="0.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CorpPolicyModel.RiskType" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CorpPolicyModel.VATData" Width="1.5" PointX="7.75" PointY="14.5" IsExpanded="true" />
+        <AssociationConnector Association="CorpPolicyModel.FK_PolicyBank_AccountType" ManuallyRouted="false" />
+        <AssociationConnector Association="CorpPolicyModel.FK_PolicyBank_Bank" ManuallyRouted="false" />
+        <AssociationConnector Association="CorpPolicyModel.FK_Policy_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="CorpPolicyModel.FK_Policy_Insurer" ManuallyRouted="false" />
+        <AssociationConnector Association="CorpPolicyModel.FK_PolicyDebit_Insurer" ManuallyRouted="false" />
+        <AssociationConnector Association="CorpPolicyModel.FK_Policy_PolicyType" ManuallyRouted="false" />
+        <AssociationConnector Association="CorpPolicyModel.FK_PolicyBank_Policy" ManuallyRouted="false" />
+        <AssociationConnector Association="CorpPolicyModel.FK_PolicyDebit_Policy" ManuallyRouted="false" />
+        <AssociationConnector Association="CorpPolicyModel.FK_PolicyRisk_Policy" ManuallyRouted="false" />
+        <AssociationConnector Association="CorpPolicyModel.FK_PolicyDebitRisk_PolicyDebit" ManuallyRouted="false" />
+        <AssociationConnector Association="CorpPolicyModel.FK_PolicyRisk_RiskType" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

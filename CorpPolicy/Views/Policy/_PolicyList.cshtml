@@ -1,0 +1,151 @@
+﻿@model IPagedList<Policy>
+
+@ViewBag.ClientSortParam
+
+
+<div id="policyList">
+    <div class="pagedList" data-corp-target="#policyList">
+        @Html.PagedListPager(Model, page => Url.Action("Search",
+            new { page, currentFilter = ViewBag.CurrentFilter, CurrentSort = ViewBag.CurrentSort }),
+            PagedListRenderOptions.ClassicPlusFirstAndLast)
+    </div>
+
+    <table class="table" data-corp-sortlink="true">
+        <tr>
+            <th>
+                @Html.ActionLink("Policy No", "Search",
+                new { sortOrder = ViewBag.PolicyNoSortParm, currentFilter = ViewBag.CurrentFilter },
+                new { data_corp_sortlink = "true", data_corp_target = "#policyList" } )
+            </th>
+            <th>
+                Cancelled
+            </th>
+            <th>
+                InceptionDate
+            </th>
+            <th>
+                AnnivMonth
+            </th>
+            <th>
+                RenewalDate
+            </th>
+            <th>
+                CancellationDate
+            </th>
+            <th>
+                Frequeny
+            </th>
+            <th>
+                @Html.ActionLink("Insured", "Search", 
+                new { sortOrder = ViewBag.InsuredSortParm, currentFilter = ViewBag.CurrentFilter },
+                new { data_corp_sortlink = "true", data_corp_target = "#policyList" } )
+            </th>
+            <th>
+                AdminFee
+            </th>
+            <th>
+                BrokerFee
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                Created
+            </th>
+            <th>
+                CreatedBy
+            </th>
+            <th>
+                Changed
+            </th>
+            <th>
+                ChangedBy
+            </th>
+            <th>
+                @Html.ActionLink("Client Name", "Search", 
+                new { sortOrder = ViewBag.ClientSortParm, currentFilter = ViewBag.CurrentFilter }, 
+                new { data_corp_sortlink = "true", data_corp_target = "#policyList" } )
+            </th>
+            <th>
+                Insurer Name
+            </th>
+            <th>
+                Policy Type
+            </th>
+            <th>
+                Account Name
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PolicyNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cancelled)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InceptionDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AnnivMonth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RenewalDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CancellationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Frequeny)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Insured)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdminFee)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BrokerFee)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Created)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Changed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ChangedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Client.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Insurer.InsurerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PolicyType.PolicyTypeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PolicyBank.AccountName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PolicyID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.PolicyID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.PolicyID })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>

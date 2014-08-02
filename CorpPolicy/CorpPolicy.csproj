@@ -294,7 +294,10 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+<<<<<<< HEAD
     <Content Include="Scripts\corpmask.js" />
+=======
+>>>>>>> 14cb027fa5f38b396f69fe1b5711582ffa817feb
     <Content Include="Scripts\corpscript.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

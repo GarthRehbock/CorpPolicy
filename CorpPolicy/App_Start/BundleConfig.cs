@@ -12,6 +12,7 @@ namespace CorpPolicy
                 "~/Scripts/jquery-ui-{version}.js",
                 "~/Scripts/jquery.validate*",
                 "~/Scripts/jquery.unobsrusic-alax.js",
+                "~/Scripts/bootstrap-wysiwyg.js",
                 "~/Scripts/corpscript.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
@@ -31,6 +32,7 @@ namespace CorpPolicy
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-theme.css",
                       "~/Content/themes/Base/jquery-ui*",
                       "~/Content/site.css"));
         }
